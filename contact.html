@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Your Ad Created | AuraPro Ads</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-main">AuraPro<span class="logo-accent"> Ads</span></span>
+        <span class="logo-tag">APA</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link nav-cta active">Get Your Ad Created</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-hero">
+      <div class="container">
+        <h1 class="page-title">Get Your Ad Created</h1>
+        <p class="section-intro">
+          Share a few details about your brand and what you want this ad to do. We’ll review and get back to you with next steps.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2 contact-grid">
+          <div>
+            <h2 class="card-title">Project Intake</h2>
+            <p class="card-body">
+              Fill out this quick form to start your project. You’ll receive a reply with a confirmation, simple next steps, and any key questions.
+            </p>
+            <ul class="list">
+              <li>Review of your goals and brand</li>
+              <li>Package confirmation (or recommendation)</li>
+              <li>Estimated delivery window</li>
+            </ul>
+          </div>
+
+          <div>
+            <!--
+              TODO:
+              Replace the `action` value below with your actual Formspree or Zapier webhook URL.
+              Example Formspree: https://formspree.io/f/your-id-here
+            -->
+            <form class="form" method="POST" action="https://formspree.io/f/your-form-id-here">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="_replyto" required>
+              </div>
+
+              <div class="form-group">
+                <label for="business">Business / Brand Name</label>
+                <input type="text" id="business" name="business">
+              </div>
+
+              <div class="form-group">
+                <label for="social">Website or Social Link</label>
+                <input type="url" id="social" name="social" placeholder="https://">
+              </div>
+
+              <div class="form-group">
+                <label for="package">Which package are you interested in?</label>
+                <select id="package" name="package">
+                  <option value="">Select a package</option>
+                  <option value="Starter Spotlight ($175)">Starter Spotlight ($175)</option>
+                  <option value="Growth Campaign ($350)">Growth Campaign ($350)</option>
+                  <option value="Authority Launch ($550)">Authority Launch ($550)</option>
+                  <option value="Domination Package ($1,500)">Domination Package ($1,500)</option>
+                  <option value="Monthly Retainer ($2,500/mo)">Monthly Retainer ($2,500 / month)</option>
+                  <option value="Not sure">Not sure – recommend one</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="goal">What is the main goal of this ad?</label>
+                <textarea id="goal" name="goal" rows="3" placeholder="Launch, awareness, sales, promo, etc."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="deadline">Do you have a desired launch date?</label>
+                <input type="text" id="deadline" name="deadline" placeholder="Example: December 28, 2025">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Anything else we should know?</label>
+                <textarea id="message" name="message" rows="4" placeholder="Brand tone, references, special requests, etc."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Submit Project Request</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AuraPro Ads (APA). All rights reserved.</p>
+      <p class="footer-sub">AI-powered cinematic ads for modern brands.</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
 
