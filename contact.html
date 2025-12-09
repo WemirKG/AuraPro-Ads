@@ -56,7 +56,8 @@
               Replace the `action` value below with your actual Formspree or Zapier webhook URL.
               Example Formspree: https://formspree.io/f/your-id-here
             -->
-            <form class="form" method="POST" action="https://formspree.io/f/your-form-id-here">
+            <form class="form" method="POST" action="https://formspree.io/f/mjkdzwaq">
+              <input type="hidden" name="redirect_url" id="redirect_url">
               <div class="form-group">
                 <label for="name">Your Name</label>
                 <input type="text" id="name" name="name" required>
@@ -85,7 +86,7 @@
                   <option value="Growth Campaign ($350)">Growth Campaign ($350)</option>
                   <option value="Authority Launch ($550)">Authority Launch ($550)</option>
                   <option value="Domination Package ($1,500)">Domination Package ($1,500)</option>
-                  <option value="Monthly Retainer ($2,500/mo)">Monthly Retainer ($2,500 / Month)</option>
+                  <option value="Monthly Retainer ($2,500/Mo)">Monthly Retainer ($2,500 / Month)</option>
                   <option value="Not sure">Not Sure – Recommend One</option>
                 </select>
               </div>
@@ -122,6 +123,23 @@
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </footer>
+  <script>
+  const form = document.querySelector("form");
+  const packageSelect = document.getElementById("package");
+  const redirectField = document.getElementById("redirect_url");
+
+  const paypalLinks = {
+    "Starter Spotlight ($175)": "https://www.paypal.com/ncp/payment/M8N6KUEA7H7A8",
+    "Growth Campaign ($350)": "https://www.paypal.com/ncp/payment/FCXFF9DDUDZ68",
+    "Authority Launch ($550)": "https://www.paypal.com/ncp/payment/PN4DPGX9HBF6Q",
+    "Domination Package ($1,500)": "https://www.paypal.com/ncp/payment/RK4C7VGSKG8HC",
+    "Monthly Retainer ($2,500 / Month)": "https://www.paypal.com/ncp/payment/9YNMNSQ8CR8G6"
+  };
+
+  form.addEventListener("submit", function () {
+    redirectField.value = paypalLinks[packageSelect.value] || "";
+  });
+</script>
 </body>
 </html>
 
