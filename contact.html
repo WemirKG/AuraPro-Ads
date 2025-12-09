@@ -81,7 +81,7 @@
               <div class="form-group">
                 <label for="package">Which package are you interested in?</label>
                 <select id="package" name="package">
-                  <option value="">Select a package</option>
+                  <option value= placeholder="Select a package"</option>
                   <option value="Starter Spotlight ($175)">Starter Spotlight ($175)</option>
                   <option value="Growth Campaign ($350)">Growth Campaign ($350)</option>
                   <option value="Authority Launch ($550)">Authority Launch ($550)</option>
@@ -119,15 +119,11 @@
       <p>© <span id="year"></span> AuraPro Ads</p>
       <p class="footer-sub">AI-powered cinematic ads for modern brands.</p>
     </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </footer>
   <script>
-  const form = document.querySelector("form");
+  const form = document.querySelector(".form");
   const packageSelect = document.getElementById("package");
-  const redirectField = document.getElementById("redirect_url");
 
+  // Map each package to its PayPal link
   const paypalLinks = {
     "Starter Spotlight ($175)": "https://www.paypal.com/ncp/payment/M8N6KUEA7H7A8",
     "Growth Campaign ($350)": "https://www.paypal.com/ncp/payment/FCXFF9DDUDZ68",
@@ -136,8 +132,33 @@
     "Monthly Retainer ($2,500 / Month)": "https://www.paypal.com/ncp/payment/9YNMNSQ8CR8G6"
   };
 
-  form.addEventListener("submit", function () {
-    redirectField.value = paypalLinks[packageSelect.value] || "";
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // stop the normal Formspree redirect
+
+    const selected = packageSelect.value;
+    const payUrl = paypalLinks[selected];
+
+    if (!payUrl) {
+      alert("Please choose a package before submitting.");
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    // Send the form data to Formspree in the background
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    })
+    .then(function (response) {
+      // If you want, you can check response.ok here
+      window.location.href = payUrl; // go to the correct PayPal checkout
+    })
+    .catch(function (error) {
+      console.error("Form submission error:", error);
+      alert("There was a problem submitting the form. Please try again.");
+    });
   });
 </script>
 </body>
