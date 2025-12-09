@@ -78,11 +78,11 @@
                 <label for="package">Which package are you interested in?</label>
                 <select id="package" name="package" required>
                   <option value="">Select a package</option>
-                  <option value="Starter Spotlight ($175)">Starter Spotlight ($175)</option>
-                  <option value="Growth Campaign ($350)">Growth Campaign ($350)</option>
+                  <option value="Starter Spotlight ($175)">Starter ($80)</option>
+                  <option value="Growth Campaign ($350)">Growth Campaign ($250)</option>
                   <option value="Authority Launch ($550)">Authority Launch ($550)</option>
-                  <option value="Domination Package ($1,500)">Domination Package ($1,500)</option>
-                  <option value="Monthly Retainer ($2,500 / Month)">Monthly Retainer ($2,500 / Month)</option>
+                  <option value="Domination Package ($1,500)">Domination Package ($750)</option>
+                  <option value="Monthly Retainer ($2,500 / Month)">Monthly Retainer ($1,500 / Month)</option>
                   <option value="Not sure">Not Sure – Recommend One</option>
                 </select>
               </div>
@@ -129,11 +129,11 @@
       if (!form) return;
 
       const paypalLinks = {
-        "Starter Spotlight ($175)": "https://www.paypal.com/ncp/payment/M8N6KUEA7H7A8",
-        "Growth Campaign ($350)": "https://www.paypal.com/ncp/payment/FCXFF9DDUDZ68",
+        "Starter Spotlight ($80)": "https://www.paypal.com/ncp/payment/M8N6KUEA7H7A8",
+        "Growth Campaign ($250)": "https://www.paypal.com/ncp/payment/FCXFF9DDUDZ68",
         "Authority Launch ($550)": "https://www.paypal.com/ncp/payment/PN4DPGX9HBF6Q",
-        "Domination Package ($1,500)": "https://www.paypal.com/ncp/payment/RK4C7VGSKG8HC",
-        "Monthly Retainer ($2,500 / Month)": "https://www.paypal.com/ncp/payment/9YNMNSQ8CR8G6"
+        "Domination Package ($750)": "https://www.paypal.com/ncp/payment/RK4C7VGSKG8HC",
+        "Monthly Retainer ($1,500 / Month)": "https://www.paypal.com/ncp/payment/9YNMNSQ8CR8G6"
       };
 
       form.addEventListener("submit", function (event) {
