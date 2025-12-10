@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraPro Ads – Client Feedback Survey</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-main">AuraPro<span class="logo-accent"> Ads</span></span>
+        <span class="logo-tag">WEMIR Systems</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Get Your Ad Created</a>
+        <a href="survey.html" class="nav-link nav-cta active">Client Survey</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="section page-hero">
+      <div class="container">
+        <h1 class="page-title">Client Experience Survey</h1>
+        <p class="section-intro">
+          Thanks for working with AuraPro Ads. This quick survey has 5 questions and helps us improve your experience and the results you get from your ads.
+        </p>
+      </div>
+    </section>
+
+    <!-- Survey Form -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2 contact-grid">
+          <div>
+            <h2 class="card-title">Help Us Level Up AuraPro</h2>
+            <p class="card-body">
+              Your feedback directly shapes how we improve our process, our ads, and the overall experience for you and future clients.
+            </p>
+            <p class="card-body">
+              This should take less than 2 minutes. Thank you for sharing your honest thoughts.
+            </p>
+          </div>
+
+          <div>
+            <form
+              class="form"
+              id="survey-form"
+              method="POST"
+              action="https://formspree.io/f/manrpaol"
+            >
+              <!-- Basic Info (optional but helpful) -->
+              <div class="form-group">
+                <label for="name">Name (optional)</label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email (optional, for follow-up)</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com">
+              </div>
+
+              <!-- Q1: Navigation Experience -->
+              <div class="form-group">
+                <label for="q1"><strong>1. How easy was it to navigate the AuraPro Ads page and submit your project?</strong></label>
+                <select id="q1" name="navigation_ease" required>
+                  <option value="">Select one</option>
+                  <option value="1 - Very difficult">1 – Very difficult</option>
+                  <option value="2 - Somewhat difficult">2 – Somewhat difficult</option>
+                  <option value="3 - Neutral">3 – Neutral</option>
+                  <option value="4 - Easy">4 – Easy</option>
+                  <option value="5 - Very easy">5 – Very easy</option>
+                </select>
+              </div>
+
+              <!-- Q2: Clarity of package / expectations -->
+              <div class="form-group">
+                <label for="q2"><strong>2. How clear was it what you were getting in your package (number of ads, length, what’s included)?</strong></label>
+                <select id="q2" name="package_clarity" required>
+                  <option value="">Select one</option>
+                  <option value="1 - Very unclear">1 – Very unclear</option>
+                  <option value="2 - Somewhat unclear">2 – Somewhat unclear</option>
+                  <option value="3 - Neutral">3 – Neutral</option>
+                  <option value="4 - Clear">4 – Clear</option>
+                  <option value="5 - Very clear">5 – Very clear</option>
+                </select>
+              </div>
+
+              <!-- Q3: Satisfaction with ad quality -->
+              <div class="form-group">
+                <label for="q3"><strong>3. Overall, how satisfied are you with the look and quality of your ad(s)?</strong></label>
+                <select id="q3" name="ad_quality_satisfaction" required>
+                  <option value="">Select one</option>
+                  <option value="1 - Very dissatisfied">1 – Very dissatisfied</option>
+                  <option value="2 - Somewhat dissatisfied">2 – Somewhat dissatisfied</option>
+                  <option value="3 - Neutral">3 – Neutral</option>
+                  <option value="4 - Satisfied">4 – Satisfied</option>
+                  <option value="5 - Very satisfied">5 – Very satisfied</option>
+                </select>
+              </div>
+
+              <!-- Q4: Results / performance -->
+              <div class="form-group">
+                <label for="q4"><strong>4. Since using your ad(s), how well have they performed for your goals so far?</strong></label>
+                <select id="q4" name="ad_results" required>
+                  <option value="">Select one</option>
+                  <option value="Havent used yet">I haven’t used them yet</option>
+                  <option value="Below expectations">Below my expectations</option>
+                  <option value="Met expectations">Met my expectations</option>
+                  <option value="Exceeded expectations">Exceeded my expectations</option>
+                </select>
+              </div>
+
+              <!-- Q5: Main improvement -->
+              <div class="form-group">
+                <label for="q5"><strong>5. If we could improve one thing about your experience or your ad(s), what would it be?</strong></label>
+                <textarea
+                  id="q5"
+                  name="improvement_suggestion"
+                  rows="4"
+                  placeholder="Tell us the one change that would have made this experience a 10/10 for you."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                Submit Feedback
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AuraPro Ads</p>
+      <p class="footer-sub">AI-powered cinematic ads for modern brands.</p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
