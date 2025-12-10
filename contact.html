@@ -143,8 +143,7 @@ Launch campaigns</p>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </footer>
-  <!-- Custom JS to send to Zapier + Formspree, then redirect to PayPal -->
-  <script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("wemir-form");
       const packageSelect = document.getElementById("package");
@@ -160,7 +159,7 @@ Launch campaigns</p>
       };
 
       form.addEventListener("submit", function (event) {
-        event.preventDefault(); // stop normal navigation
+        event.preventDefault(); // stop normal navigation to Formspree
 
         const selected = packageSelect.value;
         const payUrl = paypalLinks[selected];
@@ -170,46 +169,29 @@ Launch campaigns</p>
           return;
         }
 
-        // Build a clean JSON payload for Zapier
-        const payload = {
-          name: document.getElementById("name").value,
-          email: document.getElementById("email").value,          // from the email input
-          business: document.getElementById("business").value,
-          social: document.getElementById("social").value,
-          package: packageSelect.value,
-          goal: document.getElementById("goal").value,
-          deadline: document.getElementById("deadline").value,
-          message: document.getElementById("message").value
-        };
-
-        // 1) Send to Zapier (do not block the user if it fails)
-        fetch("https://hooks.zapier.com/hooks/catch/25614483/ufk3rim/", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        }).catch(function (error) {
-          console.error("Zapier submission error:", error);
-          // we don't alert the user; PayPal flow can continue
-        });
-
-        // 2) Send to Formspree and then redirect to PayPal
         const formData = new FormData(form);
 
+        // Send to Formspree in the background
         fetch("https://formspree.io/f/mjkdzwaq", {
           method: "POST",
           body: formData,
           headers: { "Accept": "application/json" }
         })
-          .then(function () {
-            // Redirect to the PayPal payment page for the chosen package
-            window.location.href = payUrl;
-          })
-          .catch(function (error) {
-            console.error("Form submission error:", error);
-            alert("There was a problem submitting the form. Please try again.");
-          });
+        .then(function () {
+          // Redirect to the PayPal payment page for the chosen package
+          window.location.href = payUrl;
+        })
+        .catch(function (error) {
+          console.error("Form submission error:", error);
+          alert("There was a problem submitting the form. Please try again.");
+        });
       });
     });
   </script>
+  <script
+    chatbot_id="6937937b76925b1a1c8869d4"
+    data-type="default"
+    src="https://app.thinkstack.ai/bot/thinkstackai-loader.min.js"
+></script>
 </body>
 </html>
