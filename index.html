@@ -21,38 +21,116 @@
         <a href="services.html" class="nav-link">Services</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link nav-cta">Get Your Ad Created</a>
-        <a href="survey.html" class="nav-link">Take Our Survey  
+        <a href="survey.html" class="nav-link">Take Our Survey</a> 
        </nav>
     </div> 
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            Cinematic Ads.<br>
-            Powered by <span class="neon-blue">AI</span>.<br>
-            Built to <span class="neon-red">Be Seen</span>.
-          </h1>
-          <p class="hero-subtitle">
-            AuraPro Ads creates high-impact commercials and social ads using cutting-edge AI tools—
-            designed to stop the scroll, elevate your brand, and convert attention into action.
-          </p>
-          <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary">Get Your Ad Created</a>
-            <a href="pricing.html" class="btn btn-ghost">View Pricing</a>
-          </div>
-          <div class="hero-meta">
-            <span class="badge">AI-Crafted Visuals</span>
-            <span class="badge">Built for Social & Web</span>
-            <span class="badge">Fast Turnaround</span>
-          </div>
-        </div>
+   <!-- Hero Section -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content hero-grid">
+    <div class="hero-text">
+      <h1 class="hero-title">
+        Cinematic Ads.<br>
+        Powered by <span class="neon-blue">AI</span>.<br>
+        Built to <span class="neon-red">Be Seen</span>.
+      </h1>
+
+      <p class="hero-subtitle">
+        AuraPro Ads creates high-impact commercials and social ads using cutting-edge AI tools—
+        designed to stop the scroll, elevate your brand, and convert attention into action.
+      </p>
+
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">Get Your Ad Created</a>
+        <a href="pricing.html" class="btn btn-ghost">View Pricing</a>
       </div>
-    </section>
+
+      <div class="hero-meta">
+        <span class="badge">AI-Crafted Visuals</span>
+        <span class="badge">Built for Social & Web</span>
+        <span class="badge">Fast Turnaround</span>
+      </div>
+    </div>
+
+    <!-- Generator card goes here -->
+    <!-- (keep the generator markup you added) -->
+
+  </div>
+</section>
+
+    <!-- FREE GENERATOR CARD -->
+    <div class="hero-generator card">
+      <h3 class="card-title">Free Ad Generator</h3>
+      <p class="card-body" style="opacity:.9;">
+        Type your idea, or let Aura recommend a concept based on your business.
+      </p>
+
+      <div class="gen-tabs">
+        <button class="gen-tab active" data-tab="custom">I’ll Type It</button>
+        <button class="gen-tab" data-tab="recommend">AI Recommend</button>
+      </div>
+
+      <!-- Custom input -->
+      <div class="gen-panel active" id="panel-custom">
+        <label class="gen-label">What are you promoting?</label>
+        <textarea id="genCustomInput" class="gen-input" rows="4"
+          placeholder="Example: Grand opening for my barbershop this Saturday. $25 cuts, free lineup with appointment..."></textarea>
+
+        <button id="btnGenerateFromCustom" class="btn btn-primary gen-btn">
+          Generate My Concept
+        </button>
+      </div>
+
+      <!-- Recommend input -->
+      <div class="gen-panel" id="panel-recommend">
+        <label class="gen-label">Business type</label>
+        <input id="bizType" class="gen-input" placeholder="Example: Barbershop / Dance studio / Restaurant">
+
+        <label class="gen-label">Offer / service</label>
+        <input id="offer" class="gen-input" placeholder="Example: $25 haircuts / Intro class $10 / Catering">
+
+        <label class="gen-label">Goal</label>
+        <select id="goal" class="gen-input">
+          <option value="sales">Get more sales</option>
+          <option value="bookings">Get more bookings</option>
+          <option value="awareness">Brand awareness</option>
+          <option value="event">Promote an event</option>
+        </select>
+
+        <label class="gen-label">Vibe</label>
+        <select id="vibe" class="gen-input">
+          <option value="cinematic">Cinematic</option>
+          <option value="luxury">Luxury</option>
+          <option value="energetic">Energetic</option>
+          <option value="minimal">Minimal / Clean</option>
+        </select>
+
+        <button id="btnGenerateRecommended" class="btn btn-primary gen-btn">
+          Recommend a Concept
+        </button>
+      </div>
+
+      <div class="gen-output-wrap">
+        <label class="gen-label">Your free concept + prompt</label>
+        <textarea id="genOutput" class="gen-output" rows="8" readonly
+          placeholder="Your concept will appear here..."></textarea>
+
+        <div class="gen-actions">
+          <button id="btnCopy" class="btn btn-outline">Copy</button>
+          <a id="btnClaimFree" class="btn btn-primary" href="contact.html">Get your free generation</a>
+        </div>
+
+        <p class="gen-note">
+          Tip: This generates a concept + Sora-ready prompt. Final video generation is delivered after confirmation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Why AuraPro Section -->
     <section class="section">
