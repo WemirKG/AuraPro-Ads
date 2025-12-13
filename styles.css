@@ -523,4 +523,59 @@ textarea:focus {
     padding-inline: 0.5rem;
   }
 }
+/* Tabs row */
+.gen-tabs{
+  display:flex;
+  gap:10px;
+  margin:14px 0 12px;
+  padding:6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
+}
+
+/* Tab button base */
+.gen-tab{
+  flex:1;
+  position:relative;
+  padding:10px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(255,255,255,.85);
+  cursor:pointer;
+  font-weight:700;
+  letter-spacing:.2px;
+  transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* Hover */
+.gen-tab:hover{
+  transform: translateY(-1px);
+  color:#fff;
+  background: rgba(255,255,255,.08);
+}
+
+/* Active = neon pill */
+.gen-tab.active{
+  color:#fff;
+  border-color: rgba(90,135,255,.45);
+  background: linear-gradient(90deg, rgba(90,135,255,.28), rgba(255,46,123,.18));
+  box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 0 2px rgba(90,135,255,.12) inset;
+}
+
+/* Small glow accent */
+.gen-tab.active::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:999px;
+  background: radial-gradient(circle at 20% 50%, rgba(90,135,255,.35), transparent 55%),
+              radial-gradient(circle at 80% 50%, rgba(255,46,123,.25), transparent 55%);
+  pointer-events:none;
+  filter: blur(10px);
+  opacity:.9;
+  z-index:-1;
+}
 
