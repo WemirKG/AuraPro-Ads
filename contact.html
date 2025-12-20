@@ -108,7 +108,25 @@ Your completed ad(s) are delivered digitally and ready to post for social media,
                 <label for="message">Anything else we should know?</label>
                 <textarea id="message" name="message" rows="4" placeholder="Tell us how you want your story...Brand tone, references, special requests, etc."></textarea>
               </div>
+              <!-- Email permission / consent -->
+<div class="form-group consent-group">
+  <label class="consent-toggle" for="consent_project">
+    <input type="checkbox" id="consent_project" name="consent_project" value="Yes" required>
+    <span class="consent-ui">
+      <span class="consent-title">Permission to Email</span>
+      <span class="consent-sub">I agree AuraPro Ads may email me about this request (updates, delivery, support).</span>
+    </span>
+  </label>
 
+  <!-- Optional marketing opt-in (recommended to keep separate) -->
+  <label class="consent-toggle consent-secondary" for="consent_marketing">
+    <input type="checkbox" id="consent_marketing" name="consent_marketing" value="Yes">
+    <span class="consent-ui">
+      <span class="consent-title">Optional: Offers & Tips</span>
+      <span class="consent-sub">You may also email me occasional promos and creative tips. Unsubscribe anytime.</span>
+    </span>
+  </label>
+</div>
               <button type="submit" class="btn btn-primary btn-full">Submit Project Request</button>
             </form>
           </div>
