@@ -20,43 +20,98 @@
         <a href="index.html" class="nav-link active">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="survey.html" class="nav-link">Take Our Survey</a> 
+        <a href="survey.html" class="nav-link">Take Our Survey</a>
         <a href="terms.html" class="nav-link">Terms of Use</a>
        </nav>
-    </div> 
+    </div>
   </header>
 
   <main>
    <!-- Hero Section -->
 <section class="hero">
-  <div class="hero-overlay"></div>
+<div class="container hero-content hero-grid">
+  <!-- LEFT: your existing text -->
+  <div class="hero-text">
+    <h1 class="hero-title">
+      Cinematic Ads.<br>
+      Powered by <span class="neon-blue">AI</span>.<br>
+      Built to <span class="neon-red">Be Seen</span>.
+    </h1>
 
-  <div class="container hero-content hero-grid">
-    <div class="hero-text">
-      <h1 class="hero-title">
-        Cinematic Ads.<br>
-        Powered by <span class="neon-blue">AI</span>.<br>
-        Built to <span class="neon-red">Be Seen</span>.
-      </h1>
+    <p class="hero-subtitle">
+      AuraPro Ads creates high-impact commercials and social ads using cutting-edge AI tools—
+      designed to stop the scroll, elevate your brand, and convert attention into action.
+    </p>
 
-      <p class="hero-subtitle">
-        AuraPro Ads creates high-impact commercials and social ads using cutting-edge AI tools—
-        designed to stop the scroll, elevate your brand, and convert attention into action.
-      </p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-primary">Get Your Ad Created</a>
+      <a href="pricing.html" class="btn btn-ghost">View Pricing</a>
+    </div>
 
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Get Your Ad Created</a>
-        <a href="pricing.html" class="btn btn-ghost">View Pricing</a>
-      </div>
-
-      <div class="hero-meta">
-        <span class="badge">AI-Crafted Visuals</span>
-        <span class="badge">Built for Social & Web</span>
-        <span class="badge">Fast Turnaround</span>
-      </div>
+    <div class="hero-meta">
+      <span class="badge">AI-Crafted Visuals</span>
+      <span class="badge">Built for Social & Web</span>
+      <span class="badge">Fast Turnaround</span>
     </div>
   </div>
-</section>
+
+  <!-- RIGHT: featured ads showcase -->
+  <aside class="hero-showcase" aria-label="Featured Ads">
+    <div class="showcase-header">
+      <h2 class="showcase-title">Featured Work</h2>
+      <p class="showcase-sub">A few recent AuraPro Ads.</p>
+    </div>
+
+    <div class="showcase-grid">
+      <button class="showcase-card" type="button"
+              data-video="assets/ads/ad1.mp4"
+              data-title="Local Brand Promo — 15s">
+        <div class="thumb" style="background-image:url('assets/thumbs/ad1.jpg')">
+          <span class="play-badge" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-meta">
+          <div class="card-title">Local Brand Promo</div>
+          <div class="card-tags">
+            <span class="tag">15s</span><span class="tag">Reels</span><span class="tag">TikTok</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="showcase-card" type="button"
+              data-video="assets/ads/ad2.mp4"
+              data-title="Event Hype — 10s">
+        <div class="thumb" style="background-image:url('assets/thumbs/ad2.jpg')">
+          <span class="play-badge" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-meta">
+          <div class="card-title">Event Hype</div>
+          <div class="card-tags">
+            <span class="tag">10s</span><span class="tag">Story</span><span class="tag">Vertical</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="showcase-card" type="button"
+              data-video="assets/ads/ad3.mp4"
+              data-title="Product Spotlight — 20s">
+        <div class="thumb" style="background-image:url('assets/thumbs/ad3.jpg')">
+          <span class="play-badge" aria-hidden="true">▶</span>
+        </div>
+        <div class="card-meta">
+          <div class="card-title">Product Spotlight</div>
+          <div class="card-tags">
+            <span class="tag">20s</span><span class="tag">YouTube</span><span class="tag">Web</span>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <div class="showcase-footer">
+      <a class="btn btn-outline btn-sm" href="services.html">What We Do</a>
+    </div>
+  </aside>
+</div>
+  </section>
     <!-- Why AuraPro Section -->
     <section class="section">
       <div class="container">
@@ -144,7 +199,7 @@
             <h3 class="card-title">Growth</h3>
             <p class="price">$135</p>
             <p class="card-body">
-              2x 25-second ads 
+              2x 25-second ads
               1x 10-second ad
               Perfect for brands leveling up their online presence. No Watermark.
             </p>
@@ -154,7 +209,7 @@
             <h3 class="card-title">Domination Package</h3>
             <p class="price">$1,500</p>
             <p class="card-body">
-              2× cinematic ad, ~ 60 seconds 
+              2× cinematic ad, ~ 60 seconds
               1× cinematic ad ~30 seconds
               1× cinematic ad ~20 seconds
               Multi-ad campaign, multi-platform approach, and creative direction to take over your niche. No Watermark.
@@ -165,20 +220,79 @@
       </div>
     </section>
   </main>
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p> <span id="year"></span></p>
-      <p class="footer-sub">AI-powered cinematic ads for modern brands.</p>
+
+  <!-- Video Modal (ADD THIS) -->
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-backdrop" data-close="true"></div>
+    <div class="video-dialog" role="dialog" aria-modal="true" aria-label="Ad Preview">
+      <button class="video-close" type="button" aria-label="Close" data-close="true">✕</button>
+      <div class="video-header">
+        <div class="video-title" id="videoTitle">Preview</div>
+      </div>
+      <video id="videoPlayer" class="video-player" controls playsinline></video>
     </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </footer>
-  <script
-    chatbot_id="6937937b76925b1a1c8869d4"
-    data-type="default"
-    src="https://app.thinkstack.ai/bot/thinkstackai-loader.min.js"
+  </div>
+
+ <footer class="site-footer">
+  <div class="container footer-inner">
+    <p> <span id="year"></span></p>
+    <p class="footer-sub">AI-powered cinematic ads for modern brands.</p>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+<!-- Featured Work modal JS (ADD THIS) -->
+<script>
+  (function () {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+    const titleEl = document.getElementById('videoTitle');
+
+    function openModal(src, title) {
+      titleEl.textContent = title || 'Preview';
+      player.src = src;
+      modal.setAttribute('aria-hidden', 'false');
+      player.play().catch(() => {});
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      player.pause();
+      player.removeAttribute('src');
+      player.load();
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.showcase-card').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-video');
+        const title = btn.getAttribute('data-title');
+        if (!src) return;
+        openModal(src, title);
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      const close = e.target && e.target.getAttribute('data-close') === 'true';
+      if (close) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+        closeModal();
+      }
+    });
+  })();
+</script>
+
+<script
+  chatbot_id="6937937b76925b1a1c8869d4"
+  data-type="default"
+  src="https://app.thinkstack.ai/bot/thinkstackai-loader.min.js"
 ></script>
+
 </body>
 </html>
-
